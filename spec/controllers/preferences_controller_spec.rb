@@ -38,7 +38,7 @@ describe PreferencesController do
 
       it "includes the user's current skin even if it is parent-only" do
         parent_only_skin = create(:skin, author: user, unusable: true)
-        user.preference.update(skin_id: parent_only_skin.id)
+        user.preference.update!(skin_id: parent_only_skin.id)
 
         get :index, params: { user_id: user.login }
 
